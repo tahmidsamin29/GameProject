@@ -38,6 +38,9 @@ public class Player extends Entity{
         worldY = gp.tileSize * 21;
         speed = 4;
         direction = "down";
+
+        maxLife = 6;
+        life = maxLife;
     }
 
     public void getPlayerImage(){
@@ -120,7 +123,8 @@ public class Player extends Entity{
 
     public void interactNPC(int i) {
         if(i != 999) {
-           System.out.println("you are hitting an npc"); 
+        
+        gp.gameState = gp.dialogueState;
     }
     }
 
