@@ -8,6 +8,7 @@ public class KeyHandler implements KeyListener {
     GamePanel gp;
 
     public boolean upPressed, downPressed, leftPressed, rightPressed;
+    public boolean enterPressed = false;
 
     public KeyHandler(GamePanel gp){
         this.gp = gp;
@@ -29,6 +30,13 @@ public class KeyHandler implements KeyListener {
         }
         if(code == KeyEvent.VK_D){
             rightPressed = true;
+        }
+        if(code == KeyEvent.VK_ENTER){
+            enterPressed = true;
+            if(gp.gameState == gp.dialogueState) {
+                gp.gameState = gp.playState;
+                enterPressed = false;
+            }
         }
         if(code == KeyEvent.VK_ESCAPE){
             if(gp.gameState == gp.playState){

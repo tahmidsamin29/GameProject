@@ -21,6 +21,7 @@ public class UI {
     int messageCounter = 0;
     public boolean gameFinished = false;
     BufferedImage heart_full, heart_half, heart_blank;
+    public String currentDialogue = "";
 
     double playTime;
     DecimalFormat dFormat = new DecimalFormat("#0.00");
@@ -86,7 +87,7 @@ public class UI {
         y = gp.tileSize/2;
 
         i = 0;
-        while(i < gp.player.life/2) {
+        while(i < gp.player.life) {
             g2.drawImage(heart_half, x, y, null);
             i++;
             if(i < gp.player.life) {
@@ -109,12 +110,23 @@ public class UI {
     }
 
     public void drawDailogueScreen() {
+
+        
         int x = gp.tileSize*2;
         int y = gp.tileSize/2;
         int width = gp.screenWidth - (gp.tileSize*4);
         int height = gp.tileSize*4;
 
         drawSubWindow(x, y, width, height);
+
+        x += gp.tileSize;
+        y += gp.tileSize;
+
+        g2.setFont(g2.getFont().deriveFont(Font.PLAIN,28F));
+        for(String line : currentDialogue.split("\n")){
+        g2.drawString(line, x, y);
+        y += 40;
+        }
     }
 
     public void drawSubWindow(int x, int y, int width, int height){

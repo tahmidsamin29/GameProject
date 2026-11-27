@@ -13,6 +13,7 @@ public class NPC_OldMan extends Entity {
         speed = 1;
 
         getImage();
+        setDialogue();
     }
 
     public void getImage(){
@@ -55,6 +56,19 @@ public class NPC_OldMan extends Entity {
         actionLockCounter = 0;
 
         }
+    }
+
+    public void setDialogue() {
+
+        dialogues[0] = "Hello Lad";
+        dialogues[1] = "How are you? Hope your\ndoing good.";
+        dialogues[2] = "This world is both a\ndangerous and unpredictable\n place.";
+    }
+
+    public void speak() {
+
+        super.speak();
+          
     }
     
 }
