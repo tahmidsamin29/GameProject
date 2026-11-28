@@ -62,7 +62,7 @@ public class NPC_OldMan extends Entity {
 
         dialogues[0] = "Hello Lad";
         dialogues[1] = "How are you? Hope your\ndoing good.";
-        dialogues[2] = "This world is both a\ndangerous and unpredictable\n place.";
+        dialogues[2] = "Atif is stupid!!!";
     }
 
     public void speak() {

@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.util.EventObject;
 
 import javax.swing.JPanel;
 
@@ -36,6 +37,7 @@ public class GamePanel extends JPanel implements Runnable {
     public CollisionChecker cChecker = new CollisionChecker(this);
     public AssetSetter aSetter = new AssetSetter(this);
     TileManager tileM = new TileManager(this);
+    public EventHandler eHandler = new EventHandler(this);
 
     public Player player = new Player(this, keyH);
     public SuperObject obj[] = new SuperObject[10];
@@ -146,6 +148,8 @@ else{
         player.draw(g2);
 
         ui.draw(g2);
+
+        // eHandler.drawEventBox(g2);
 
         g2.dispose();
 }
