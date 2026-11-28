@@ -85,6 +85,8 @@ public class Player extends Entity{
 
         int npcIndex = gp.cChecker.checkEntity(this, gp.npc);
         interactNPC(npcIndex);
+        // System.out.println("x=" + worldX + " y=" + worldY + " dir=" + direction + " state=" + gp.gameState);
+        gp.eHandler.checkEvent();
 
         if(collisionOn == false) {
             switch(direction) {
